@@ -19,7 +19,7 @@ variable "location" {
 }
 
 variable "bq_dataset_name" {
-  description = "My BugQuery Dataset Name"
+  description = "My BigQuery Dataset Name"
   default     = "my_dataset"
 }
 

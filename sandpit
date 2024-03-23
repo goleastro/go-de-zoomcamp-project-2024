@@ -1,3 +1,3 @@
-git clone https://github.com/mage-ai/compose-quickstart.git /workspaces/go-de-zoomcamp-project-2024/2_orchestration_mage
+git clone https://github.com/mage-ai/compose-quickstart.git /workspaces/go-de-zoomcamp-project-2024/3_test_mage
 
 git remote add go-de-zoomcamp-project-2024 https://github.com/goleastro/go-de-zoomcamp-project-2024.git
