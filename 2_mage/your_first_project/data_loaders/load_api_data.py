@@ -47,6 +47,8 @@ def load_data_from_api(*args, **kwargs):
 
         df = pd.read_csv(StringIO(s),sep=",",dtype=cycle_dtypes,parse_dates=parse_dates)
 
+        df['Programme'] = 'Central'
+
         dfs.append(df)
 
     combined_df = pd.concat(dfs, ignore_index=True)

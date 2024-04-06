@@ -18,7 +18,7 @@ root_path= f'{bucket_name}/{table_name}/{year}'
 
 @data_exporter
 def export_data(data, *args, **kwargs):
-    data['Year_Quarter'] = data['Year'].str[0:7].replace("20","") # defining a new column to partition on
+    data['Year_Quarter'] = data['Year'].str[0:7] # defining a new column to partition on
 
     table = pa.Table.from_pandas(data) # reading our data to pyarrow table (defining our table)
 
@@ -28,5 +28,6 @@ def export_data(data, *args, **kwargs):
         table,
         root_path=root_path,
         partition_cols=['Year_Quarter'],
-        filesystem=gcs
+        filesystem=gcs,
+        existing_data_behavior='overwrite_or_ignore' #this is currently not doing anything, try fix it
     )

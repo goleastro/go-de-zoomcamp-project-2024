@@ -20,7 +20,7 @@ variable "location" {
 
 variable "bq_dataset_name" {
   description = "My BigQuery Dataset Name"
-  default     = "my_dataset"
+  default     = "london_cycles"
 }
 
 variable "gcs_bucket_name" {
