@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    database: go-de-zoomcamp-project-2024
+    schema: london_cycles
+
+      # loaded_at_field: record_loaded_at
+    tables:
+      - name: cycle_data
