@@ -11,7 +11,7 @@ cycledata as (
     select 
         *, 
         row_number() over(partition by unqid, date_time, dir, mode, path) as rn
-    from {{ source('staging', 'cycle_data') }}
+    from {{ source('staging', 'Central_cycle_data') }}
     where unqid is not null
 
 ),
