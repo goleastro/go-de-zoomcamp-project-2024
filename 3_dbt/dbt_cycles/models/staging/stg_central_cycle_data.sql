@@ -1,14 +1,25 @@
+{{
+    config(
+        materialized='view'
+    )
+}}
+
 with 
 
-source as (
+cycledata as (
 
-    select * from {{ source('staging', 'cycle_data') }}
+    select 
+        *, 
+        row_number() over(partition by unqid, date_time, dir, mode, path) as rn
+    from {{ source('staging', 'cycle_data') }}
+    where unqid is not null
 
 ),
 
 renamed as (
 
     select
+        {{ dbt_utils.generate_surrogate_key(['unqid', 'date_time', 'dir', 'mode','path']) }} as cycle_id,
         date_time,
         year,
         unqid,
@@ -21,8 +32,15 @@ renamed as (
         count,
         programme
 
-    from source
-
+    from cycledata
+    where rn = 1
 )
 
 select * from renamed
+
+-- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'
+{% if var('is_test_run', default=false) %}
+
+  limit 100
+
+{% endif %}
