@@ -11,14 +11,16 @@ if 'test' not in globals():
 @data_loader
 def load_data_from_api(*args, **kwargs):
     
-    # change the date to a keyword argument then have 2 triggers one for 2019 and one for 2018
-    #year = kwargs['year']
-    year = "2019"
+    # change the date to a keyword argument then have triggers for 2018, 2019, Central, Inner
+    year = kwargs['year']
+    programme = kwargs['programme']
+    #year = "2019"
+    #programme = 'Inner'
 
-    urls = [f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q1%20(Jan-Mar)-Central.csv',
-    f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q2%20spring%20(Apr-Jun)-Central.csv',
-    f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q3%20(Jul-Sep)-Central.csv',
-    f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q4%20autumn%20(Oct-Dec)-Central.csv'
+    urls = [f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q1%20(Jan-Mar)-{programme}.csv',
+    f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q2%20spring%20(Apr-Jun)-{programme}.csv',
+    f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q3%20(Jul-Sep)-{programme}.csv',
+    f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q4%20autumn%20(Oct-Dec)-{programme}.csv'
     ]
 
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
@@ -29,27 +31,28 @@ def load_data_from_api(*args, **kwargs):
 
     for url in urls:
         response = requests.get(url)
-        s=requests.get(url, headers= headers).text
-    
-        cycle_dtypes = {
-                    'Year': str,
-                    'UnqID': str,
-                    'Weather': str,
-                    'Day': str,
-                    'Round': str,
-                    'Dir': str,
-                    'Path': str,
-                    'Mode': str,
-                    'Count': pd.Int64Dtype()
-                }
+        if response.ok:
+            s=requests.get(url, headers= headers).text
         
-        parse_dates=[['Date', 'Time']]
+            cycle_dtypes = {
+                        'Year': str,
+                        'UnqID': str,
+                        'Weather': str,
+                        'Day': str,
+                        'Round': str,
+                        'Dir': str,
+                        'Path': str,
+                        'Mode': str,
+                        'Count': pd.Int64Dtype()
+                    }
+            
+            parse_dates=[['Date', 'Time']]
 
-        df = pd.read_csv(StringIO(s),sep=",",dtype=cycle_dtypes,parse_dates=parse_dates)
+            df = pd.read_csv(StringIO(s),sep=",",dtype=cycle_dtypes,parse_dates=parse_dates)
 
-        df['Programme'] = 'Central'
+            df['Programme'] = programme
 
-        dfs.append(df)
+            dfs.append(df)
 
     combined_df = pd.concat(dfs, ignore_index=True)
 

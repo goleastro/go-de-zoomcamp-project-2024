@@ -20,13 +20,16 @@ def load_from_google_cloud_storage(*args, **kwargs):
 
     bucket_name = 'go-de-zoomcamp-project-2024-bucket'
 
-    #year = kwargs['year']
-    year = "2019"
+    year = kwargs['year']
+    programme = kwargs['programme']
+    #year = "2019"
+    #programme = 'Inner'
+
     dfs = []
 
     client = storage.Client()
     bucket = client.bucket(bucket_name)
-    for blob in bucket.list_blobs(prefix=f'central_cycle_data/{year}'):
+    for blob in bucket.list_blobs(prefix=f'{programme}_cycle_data/{year}'):
         if blob.name.endswith(".parquet"):
             print(blob.name)
 
