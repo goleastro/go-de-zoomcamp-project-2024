@@ -22,7 +22,7 @@ renamed as (
         {{ dbt_utils.generate_surrogate_key(['unqid', 'date_time', 'dir', 'mode','path']) }} as cycle_id,
         date_time,
         year,
-        unqid,
+        unqid as locationid,
         weather,
         day,
         round,
