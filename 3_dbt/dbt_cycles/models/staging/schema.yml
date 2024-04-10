@@ -8,6 +8,8 @@ sources:
       # loaded_at_field: record_loaded_at
     tables:
       - name: Central_cycle_data
+      - name: Inner_cycle_data
+      - name: Outer_cycle_data
 
 models:
   - name: stg_central_cycle_data
