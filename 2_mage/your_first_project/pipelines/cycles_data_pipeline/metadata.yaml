@@ -10,12 +10,12 @@ blocks:
   language: python
   name: load_api_data
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_loader
   upstream_blocks: []
   uuid: load_api_data
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -32,7 +32,7 @@ blocks:
   upstream_blocks:
   - load_api_data
   uuid: transform_cycle_data
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -43,55 +43,50 @@ blocks:
   language: python
   name: export_cycles_data_to_gcs
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
   - transform_cycle_data
   uuid: export_cycles_data_to_gcs
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
-  - export_cycle_bigquery
+  - export_cycle_bigquery_python
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
   name: load_cycle_gcs
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_loader
   upstream_blocks:
   - export_cycles_data_to_gcs
   uuid: load_cycle_gcs
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     data_provider: bigquery
     data_provider_database: ''
     data_provider_profile: default
     data_provider_schema: london_cycles
-    data_provider_table: cycle_data
-    dbt: {}
-    disable_query_preprocessing: false
     export_write_policy: replace
-    limit: 1000
-    use_raw_sql: false
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
-  language: sql
-  name: export_cycle_bigquery
+  language: python
+  name: export_cycle_bigquery_python
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
   - load_cycle_gcs
-  uuid: export_cycle_bigquery
+  uuid: export_cycle_bigquery_python
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

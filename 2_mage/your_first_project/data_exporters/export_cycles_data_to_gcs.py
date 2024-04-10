@@ -10,14 +10,16 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/keys/go-de-zoomcamp-pr
 bucket_name = 'go-de-zoomcamp-project-2024-bucket'
 project_id = 'go-de-zoomcamp-project-2024'
 
-table_name="central_cycle_data"
-#year = kwargs['year']
-year = "2019"
-
-root_path= f'{bucket_name}/{table_name}/{year}'
-
 @data_exporter
 def export_data(data, *args, **kwargs):
+
+    year = kwargs['year']
+    programme = kwargs['programme']
+    #year = "2019"
+    #programme = 'Inner'
+    table_name=f'{programme}_cycle_data'
+    root_path= f'{bucket_name}/{table_name}/{year}'
+
     data['Year_Quarter'] = data['Year'].str[0:7] # defining a new column to partition on
 
     table = pa.Table.from_pandas(data) # reading our data to pyarrow table (defining our table)
