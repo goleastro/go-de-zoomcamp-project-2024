@@ -16,7 +16,7 @@ def export_data(data, *args, **kwargs):
     year = kwargs['year']
     programme = kwargs['programme']
     #year = "2019"
-    #programme = 'Inner'
+    #programme = 'Outer'
     table_name=f'{programme}_cycle_data'
     root_path= f'{bucket_name}/{table_name}/{year}'
 

@@ -11,7 +11,7 @@ if 'data_exporter' not in globals():
 def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
     
     programme = kwargs['programme']
-    #programme = 'Inner'
+    #programme = 'Outer'
     """
     Template for exporting data to a BigQuery warehouse.
     Specify your configuration settings in 'io_config.yaml'.
@@ -26,4 +26,5 @@ def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
         df,
         table_id,
         if_exists='replace',  # Specify resolution policy if table name already exists
+        overwrite_types={'Path': 'STRING'},
     )

@@ -15,7 +15,7 @@ def load_data_from_api(*args, **kwargs):
     year = kwargs['year']
     programme = kwargs['programme']
     #year = "2019"
-    #programme = 'Inner'
+    #programme = 'Outer'
 
     urls = [f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q1%20(Jan-Mar)-{programme}.csv',
     f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q2%20spring%20(Apr-Jun)-{programme}.csv',
@@ -55,7 +55,7 @@ def load_data_from_api(*args, **kwargs):
             dfs.append(df)
 
     combined_df = pd.concat(dfs, ignore_index=True)
-
+    
     return combined_df
 
 @test

@@ -23,7 +23,7 @@ def load_from_google_cloud_storage(*args, **kwargs):
     year = kwargs['year']
     programme = kwargs['programme']
     #year = "2019"
-    #programme = 'Inner'
+    #programme = 'Outer'
 
     dfs = []
 
