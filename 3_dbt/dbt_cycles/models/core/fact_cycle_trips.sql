@@ -30,4 +30,4 @@ dim_locations as (
 select *
 from trips_unioned
 inner join dim_locations
-on central_cycle_data.locationid = dim_locations.Site_ID
+on trips_unioned.locationid = dim_locations.Site_ID

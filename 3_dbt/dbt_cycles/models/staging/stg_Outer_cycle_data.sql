@@ -10,7 +10,7 @@ cycledata as (
 
     select 
         *, 
-        row_number() over(partition by unqid, date_time, dir, mode) as rn
+        row_number() over(partition by unqid, date_time, dir, mode, path) as rn
     from {{ source('staging', 'Outer_cycle_data') }}
     where unqid is not null
 
@@ -19,7 +19,7 @@ cycledata as (
 renamed as (
 
     select
-        {{ dbt_utils.generate_surrogate_key(['unqid', 'date_time', 'dir', 'mode']) }} as cycle_id,
+        {{ dbt_utils.generate_surrogate_key(['unqid', 'date_time', 'dir', 'mode', 'path']) }} as cycle_id,
         date_time,
         year,
         unqid as locationid,
