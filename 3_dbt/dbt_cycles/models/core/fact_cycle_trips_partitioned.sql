@@ -1,6 +1,11 @@
 {{
     config(
         materialized='table',
+        partition_by={
+        "field": "date_time",
+        "data_type": "datetime",
+        "granularity": "day"
+        }
     )
 }}
 -- cluster_by = ["programme", "locationid","mode"],
