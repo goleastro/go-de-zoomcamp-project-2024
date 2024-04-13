@@ -1,0 +1,53 @@
+triggers:
+- envs: []
+  last_enabled_at: null
+  name: cycle data central 2019
+  pipeline_uuid: cycles_data_pipeline
+  schedule_interval: '@once'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-04-07 16:30:00
+  status: inactive
+  variables:
+    programme: Central
+    year: 2019
+- envs: []
+  last_enabled_at: null
+  name: cycle data central 2020
+  pipeline_uuid: cycles_data_pipeline
+  schedule_interval: '@once'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-04-13 10:04:00
+  status: inactive
+  variables:
+    programme: Central
+    year: 2020
+- envs: []
+  last_enabled_at: null
+  name: cycle data inner 2019
+  pipeline_uuid: cycles_data_pipeline
+  schedule_interval: '@once'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-04-07 16:29:00
+  status: inactive
+  variables:
+    programme: Inner
+    year: 2019
+- envs: []
+  last_enabled_at: null
+  name: cycle data outer 2019
+  pipeline_uuid: cycles_data_pipeline
+  schedule_interval: '@once'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-04-07 16:23:00
+  status: inactive
+  variables:
+    programme: Outer
+    year: 2019
