@@ -31,3 +31,4 @@ select *
 from trips_unioned
 inner join dim_locations
 on trips_unioned.locationid = dim_locations.Site_ID
+-- testing CI job
