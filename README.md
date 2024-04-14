@@ -82,6 +82,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
           - **project_id:** this should your GCP projectID
           - **year:** this variable is used to pick which year we download data for _(this value can be between 2014 and 2019)_
           - **programme:** this is the cycle count programme type to download _(this value can be either Central, Inner or Outer. NB the first letter of the word must be capital)_
+### Pipeline | API | to | GCS (as partitioned parquet) | to | BigQuery
 13. Mage should have a few Triggers already setup. Manually execute all the triggers. The triggers run the pipe line for each programme `(Outer, Central, Inner)` once for each of the years `2017, 2018, 2019`
      - if there are no triggers setup for some reason, then setup and execute the triggers
      - The cycle data will have loaded to the GCS bucket, partitioned by year
