@@ -62,7 +62,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
      - **gcs_bucket_name:** this should be the name of your GCS bucket
 5. Run `Terraform init`
 6. Run `Terraform apply` and hit "y" if you are happy with the plan
-7. cd to `2_mage` and execute `run docker-compose up` - this will start the Mage container
+7. Start the Mage container by executing a cd to the `2_mage` directory and then run `run docker-compose up`
 8. Update **io_config.yaml** file found here `2_mage/io_config.yaml`
      - Update **GOOGLE_SERVICE_ACC_KEY_FILEPATH** to point to the location of your GCP file. Keep in mind that we are running Mage in a docker contain with a volume mounted for storage. The folder _2_mage_ is equivalent to the location _/home/src/_.
      - Therefore `"/home/src/keys/go-de-zoomcamp-project-2024.json"` on the docker container would translate to on our VM `"2_mage/keys/go-de-zoomcamp-project-2024.json"`
