@@ -107,7 +107,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
      - Point to the production environment
      - Run the job
      - Check your dataset and confirm that the deployment to 'production' was successful. All models from point 15 above should be present in the production.
-### Dashboard
+### Dashboard with Looker Studio
 17. In Google's Looker Studio
      - Create a new Big Query data source
      - Point to the fact_cycle_trips table in your production (or dev) dataset
