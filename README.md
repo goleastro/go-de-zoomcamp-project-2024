@@ -63,5 +63,5 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 5. Run `Terraform init`
 6. Run `Terraform apply` and hit "y" if you are happy with the plan
 7. Update **io_config.yaml** file found here `2_mage/io_config.yaml`
-        - Update **GOOGLE_SERVICE_ACC_KEY_FILEPATH** to point to the location of your GCP file. Keep in mind that we are running Mage in a docker contain with a volume mounted for storage. The folder _2_mage_ is equivalent to the location _/home/src/_.
-        - Therefore `"/home/src/keys/go-de-zoomcamp-project-2024.json"` on the docker container would translate to on our VM `"2_mage/keys/go-de-zoomcamp-project-2024.json"`
+     - Update **GOOGLE_SERVICE_ACC_KEY_FILEPATH** to point to the location of your GCP file. Keep in mind that we are running Mage in a docker contain with a volume mounted for storage. The folder _2_mage_ is equivalent to the location _/home/src/_.
+     - Therefore `"/home/src/keys/go-de-zoomcamp-project-2024.json"` on the docker container would translate to on our VM `"2_mage/keys/go-de-zoomcamp-project-2024.json"`
