@@ -46,8 +46,11 @@ The data in the fact table "fact_cycle_trips_partitioned_clustered" was partitio
 
 # Instructions
 
-We are going to assume that a GitHub CodeSpace will be used to run this project.
-We also require a Google Cloud Platform project and a credentials file that is able to create buckets, and create and modify BigQuery datasets.
+Prerequisites
+- We are going to assume that a GitHub CodeSpace will be used to run this project.
+- GCP project
+- GCP credentials file capable of modifyng GCS buckets
+- GCP credentials file capable of modyfing BigQuery datasets
 
 1. Install Terraform https://developer.hashicorp.com/terraform/install
 2. Install Jupyter *pip install jupyter* (optional - not required to run the project)
