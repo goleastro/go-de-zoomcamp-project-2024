@@ -91,4 +91,16 @@ Assuming that a GitHub CodeSpace will be used to run this project.
                - Clustering was done to improve performance when filtering on the "Mode" field.
            
 15. Next run `dbt build` with DBT cloud.
-     - Check your 
+     - Check that the models have written to your dataset
+          - dim_locations
+          - fact_cycle_trips
+          - monitoring_locations_lookup
+          - stg_Inner_cycle_data
+          - stg_Outer_cycle_data
+          - stg_central_cycle_data  
+16. (Optional) Next we want to deploy the models to a 'production' environment.
+     - To do this, setup a 'Deploy Job' in DBT
+     - Point to the production environment
+     - Run the job
+     - Check your dataset and confirm that the deployment to 'production' was successful. All models from point 15 above should be present in the production.
+17. 
