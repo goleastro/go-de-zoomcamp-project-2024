@@ -27,7 +27,7 @@ We have developed a dashboard with a few tiles by:
 The cycle data is made available periodically, and therefore we have created a batch processing pipeline.
 
 # Technologies
-The technologies that were used are
+The technologies that were used are:
 
 - Cloud: GCP
 - Infrastructure as code (IaC): Terraform
@@ -40,12 +40,6 @@ The technologies that were used are
 # Dashboard
 
 - Dashboard: Looker Studio
-You can use any of the tools shown in the course (Data Studio or Metabase) or any other BI tool of your choice to build a dashboard. If you do use another tool, please specify and make sure that the dashboard is somehow accessible to your peers.
 
-Your dashboard should contain at least two tiles, we suggest you include:
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/79a0f9ba-480f-4ed0-897f-17fb47e11517)
 
-1 graph that shows the distribution of some categorical data
-1 graph that shows the distribution of the data across a temporal line
-Ensure that your graph is easy to understand by adding references and titles.
-
-Example dashboard:
