@@ -55,6 +55,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 - GCP credentials file capable of modifyng GCS buckets
 - GCP credentials file capable of modyfing BigQuery datasets
 
+### Infrastructure
 1. Fork this repository
 2. Install Terraform [Terraform install instructions](https://developer.hashicorp.com/terraform/install)
 3. Install Jupyter `pip install jupyter` (optional - not required to run the project)
@@ -67,6 +68,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 6. Run `Terraform init`
 7. Run `Terraform apply` and hit "y" if you are happy with the plan
      - Check GCP and make sure your GCS storage bucket and BigQuery dataset was created
+### Orchestration
 9. Start the Mage container by navigating to the `2_mage` directory and then running `run docker-compose up`
 10. Make sure port 6789 is open and access Mage here http://localhost:6789/ 
 11. Update **io_config.yaml** file found here `2_mage/io_config.yaml`
@@ -90,8 +92,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
      - The cycle data will have been read from the GCS bucket to BigQuery, to a dataset for each programme, `(Outer, Central, Inner)`.
           - The datasets are created with a partition on the "Date_Time" field per day and clusters the tables pm the "Mode" field.
                - Partitioning was done to reduce the read size by upstream DBT processes.
-               - Clustering was done to improve performance when filtering on the "Mode" field.
-           
+               - Clustering was done to improve performance when filtering on the "Mode" field.           
 15. Next run `dbt build` with DBT cloud.
      - Check that the models have written to your dataset
           - dim_locations
