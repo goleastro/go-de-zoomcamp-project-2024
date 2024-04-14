@@ -20,7 +20,7 @@ We have developed a dashboard with a few tiles by:
 - Using cycle data provided by TfL here cycling.data.tfl.gov.uk.
 - Creating a pipeline in Mage that processes the dataset and loads it GCS in Parquet format.
 - The pipeline also move the data from the data lake to BigQuery.
-- We then used DBT to transform the data in the data warehouse into a production environment where it is now prepared for the dashboard.
+- We then used DBT to transform the data and partition the data in the data warehouse into a production environment where it is now prepared for the dashboard.
 - Looker Studio was then used to present the cycle data information in a dashboard.
 
 # Data Pipeline
@@ -39,6 +39,7 @@ The technologies that were used are:
 
 # Dashboard
 
+The data in the fact table "fact_cycle_trips_partitioned_clustered" was partitioned by "Date_Time" and clustered by "Mode" to improve the dashboard read size and performance respectively. 
 - Dashboard: Looker Studio
 
 ![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/79a0f9ba-480f-4ed0-897f-17fb47e11517)
