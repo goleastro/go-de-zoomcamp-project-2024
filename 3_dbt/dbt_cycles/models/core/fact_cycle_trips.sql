@@ -5,7 +5,7 @@
         "field": "date_time",
         "data_type": "datetime",
         "granularity": "day"
-        }
+        },
         cluster_by = "mode",
     )
 }}
