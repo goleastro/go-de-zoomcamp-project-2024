@@ -1,10 +1,13 @@
-# de-zoomcamp-project-2024
+# de-zoomcamp-project-2024 | Course Project
 
-Course Project
 # Objective
 The goal of this project is to apply everything we have learned in this course to build an end-to-end data pipeline.
 
 # Problem statement
+One of the things London is known for is it's traffic, and as such, the city has imposed congestion charges on motor vehicles, with penalties for late payers.
+
+We will be using cycle data provided by cycling.data.tfl.gov.uk to analyse the flow of cycle traffic during different quarters of the year, at various boroughs within 3 areas of London, namely, Central, Inner and Outer London.
+
 Develop a dashboard with two tiles by:
 
 - Selecting a dataset of interest (see Datasets)
