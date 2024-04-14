@@ -44,3 +44,10 @@ The data in the fact table "fact_cycle_trips_partitioned_clustered" was partitio
 
 ![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/79a0f9ba-480f-4ed0-897f-17fb47e11517)
 
+# Instructions
+
+We are going to assume that a GitHub CodeSpace will be used to run this project.
+
+1. Install Terraform https://developer.hashicorp.com/terraform/install
+2. Install Jupyter [pip install jupyter] (optional - not required to run the project)
+3. 
