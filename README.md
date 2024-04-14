@@ -118,6 +118,6 @@ Assuming that a GitHub CodeSpace will be used to run this project.
      - Bicycle type per borough: Add stacked bar chart, dimension = dimension = "mode"; metric = sum(count)
      - Bicycle type per quarter: Add stacked bar chart, dimension = "year"; break down dimension = "mode"; metric = sum(count)
 
-Instead of creating your own dashboard, I have created a link to view my dashboard, however, my GCP service will expire before the end of April 2024
+Instead of creating your own dashboard, I have created a link to view my dashboard, however, my GCP service will expire before the end of April 2024 and therefore no connection to BigQuery will be available.
 
 [link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
