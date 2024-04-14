@@ -89,6 +89,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 14. Mage should have a few Triggers already setup. Manually execute all the triggers. The triggers run the pipe line for each programme `(Outer, Central, Inner)` once for each of the years `2017, 2018, 2019`
      - if there are no triggers setup for some reason, then setup and execute the triggers
      - The cycle data will have loaded to the GCS bucket, partitioned by year
-     - The cycle data will have been read from the GCS bucket to BigQuery, to a dataset for each programme, `(Outer, Central, Inner)`. The datasets are created with a partition on the "Date_Time" field per day and clusters the tables pm the "Mode" field.
-          - Partitioning was done to reduce the read size by upstream DBT processes.
-          - Clustering was done to improve performance when filtering on the "Mode" field. 
+     - The cycle data will have been read from the GCS bucket to BigQuery, to a dataset for each programme, `(Outer, Central, Inner)`.
+     -      The datasets are created with a partition on the "Date_Time" field per day and clusters the tables pm the "Mode" field.
+               - Partitioning was done to reduce the read size by upstream DBT processes.
+               - Clustering was done to improve performance when filtering on the "Mode" field. 
