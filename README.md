@@ -52,6 +52,13 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 - GCP credentials file capable of modifyng GCS buckets
 - GCP credentials file capable of modyfing BigQuery datasets
 
-1. Install Terraform [](https://developer.hashicorp.com/terraform/install)
+1. Install Terraform [Terraform install instructions](https://developer.hashicorp.com/terraform/install)
 2. Install Jupyter `pip install jupyter` (optional - not required to run the project)
-3. In the folder "1_terraform" 
+3. Place your GCP credentials file within a directory of the project
+   i.e.![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/1a863e70-12c9-488e-ad84-e61cd33e7c00)
+
+4. In the folder _1_terraform_, modify the **variables.tf** file
+  - credentials: this should be the path to your GCP credentials file. i.e. "./keys/go-de-zoomcamp-project-2024.json"
+  - project: this should be the name of your GCP project
+  - bq_dataset_name: you can leave this as "london_cycles"
+  - gcs_bucket_name: this should be the name of your GCS bucket
