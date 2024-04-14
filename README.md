@@ -8,6 +8,11 @@ One of the things London is known for is it's traffic, and as such, the city has
 
 We will be using cycle data provided by cycling.data.tfl.gov.uk to analyse the flow of cycle traffic during different quarters of the year, at various boroughs within 3 areas of London, namely, Central, Inner and Outer London.
 
+TfL has mentioned that the cycle data from 2020 is synthetic because of the COVID-19 pandemic, and as such, we will only be using data between 2017 and 2019 for this exercise.
+
+Central data from 2017 to 2019 includes all 4 quarters of the year (Q1 to Q4)
+Inner and Outer data from 2017 to 2019 only includes quarter 2 of the year (Q2 only)
+
 Develop a dashboard with two tiles by:
 
 - Selecting a dataset of interest (see Datasets)
