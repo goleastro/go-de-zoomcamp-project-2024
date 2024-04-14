@@ -51,7 +51,7 @@ triggers:
     project_id: go-de-zoomcamp-project-2024
     year: 2019
 - envs: []
-  last_enabled_at: 2024-04-13 17:18:42.061013
+  last_enabled_at: 2024-04-14 15:16:30.512644
   name: cycle data inner 2018
   pipeline_uuid: cycles_data_pipeline
   schedule_interval: '@once'
@@ -59,7 +59,7 @@ triggers:
   settings: null
   sla: null
   start_time: 2024-04-13 17:18:00
-  status: inactive
+  status: active
   variables:
     bucket_name: go-de-zoomcamp-project-2024-bucket
     dataset: london_cycles
@@ -93,7 +93,7 @@ triggers:
   settings: null
   sla: null
   start_time: 2024-04-13 16:48:00
-  status: active
+  status: inactive
   variables:
     bucket_name: go-de-zoomcamp-project-2024-bucket
     dataset: london_cycles

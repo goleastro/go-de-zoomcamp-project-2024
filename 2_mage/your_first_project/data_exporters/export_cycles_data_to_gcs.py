@@ -13,12 +13,15 @@ if 'data_exporter' not in globals():
 @data_exporter
 def export_data(data, *args, **kwargs):
 
+    #google credential key location
     google_app_cred_location = kwargs['google_app_cred_location']
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = google_app_cred_location
-    project_id = kwargs['project_id']
-    bucket_name = kwargs['bucket_name']
-    year = kwargs['year']
-    programme = kwargs['programme']
+
+    #pipeline variables
+    project_id = kwargs['project_id'] # GCP project ID
+    bucket_name = kwargs['bucket_name'] # GCP bucket
+    year = kwargs['year'] # cycle data year
+    programme = kwargs['programme'] # cycle data pogramme (Central, Inner, Outer)
     #year = "2019"
     #programme = 'Outer'
 

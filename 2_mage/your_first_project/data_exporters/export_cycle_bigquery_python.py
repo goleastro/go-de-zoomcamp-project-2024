@@ -10,7 +10,7 @@ if 'data_exporter' not in globals():
 @data_exporter
 def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
     
-    programme = kwargs['programme']
+    programme = kwargs['programme'] #cycle data pogramme (Central, Inner, Outer)
     #programme = 'Outer'
     """
     Template for exporting data to a BigQuery warehouse.
@@ -18,8 +18,8 @@ def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
 
     Docs: https://docs.mage.ai/design/data-loading#bigquery
     """
-    project_id = kwargs['project_id']
-    dataset = kwargs['dataset']
+    project_id = kwargs['project_id'] #GCP project ID
+    dataset = kwargs['dataset'] #BigQuery dataset name
     
     table_id = f'{project_id}.{dataset}.{programme}_cycle_data'
     config_path = path.join(get_repo_path(), 'io_config.yaml')
