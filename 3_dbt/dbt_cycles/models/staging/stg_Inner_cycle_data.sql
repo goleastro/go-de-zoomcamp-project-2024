@@ -34,6 +34,7 @@ renamed as (
 
     from cycledata
     where rn = 1
+    and mode in ('Private cycles', 'Cycle hire bikes')
 )
 
 select * from renamed

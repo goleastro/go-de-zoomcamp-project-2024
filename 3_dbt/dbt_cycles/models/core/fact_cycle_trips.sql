@@ -5,7 +5,8 @@
         "field": "date_time",
         "data_type": "datetime",
         "granularity": "day"
-        }
+        },
+        cluster_by = "mode",
     )
 }}
 -- cluster_by = ["programme", "locationid","mode"],
