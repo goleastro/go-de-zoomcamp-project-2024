@@ -15,11 +15,11 @@ We are a cycle hire company called "London Peddlers", and we would like to use t
 Central data from 2017 to 2019 includes all 4 quarters of the year (Q1 to Q4)
 Inner and Outer data from 2017 to 2019 only includes quarter 2 of the year (Q2 only)
 
-Develop a dashboard with two tiles by:
+We have developed a dashboard with a few tiles by:
 
-- Selecting a dataset of interest (see Datasets)
-- Creating a pipeline for processing this dataset and putting it to a datalake
-- Creating a pipeline for moving the data from the lake to a data warehouse
+- Using cycle data provided by TfL here cycling.data.tfl.gov.uk.
+- Creating a pipeline that processes the dataset and loads it GCS in Parquet format.
+- The pipeline also move the data from the data lake to BigQuery.
 - Transforming the data in the data warehouse: prepare it for the dashboard
 - Building a dashboard to visualize the data
 
