@@ -66,4 +66,10 @@ Assuming that a GitHub CodeSpace will be used to run this project.
      - Update **GOOGLE_SERVICE_ACC_KEY_FILEPATH** to point to the location of your GCP file. Keep in mind that we are running Mage in a docker contain with a volume mounted for storage. The folder _2_mage_ is equivalent to the location _/home/src/_.
      - Therefore `"/home/src/keys/go-de-zoomcamp-project-2024.json"` on the docker container would translate to on our VM `"2_mage/keys/go-de-zoomcamp-project-2024.json"`
 8. Update **metada.yaml** file found here `2_mage/your_first_project/pipelines/cycles_data_pipeline/metadata.yaml`
-     -  
+     - Update the following variables
+          - **bucket_name:** this should be your GCS bucket name
+          - **dataset:** you can leave this name as is
+          - **google_app_cred_location:** point this to the location of your GCP credential file (similar to step 7 above)
+          - **project_id:** this should your GCP projectID
+          - **year:** this variable is used to pick which year we download data for (this value can be between 2014 and 2019)
+          - **programme:** this is the cycle count programme type to download (this value can be either Central, Inner or Outer. NB the first letter of the word must be capital)
