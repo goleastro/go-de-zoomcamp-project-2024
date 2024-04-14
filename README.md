@@ -45,7 +45,8 @@ The data in the fact table "fact_cycle_trips_partitioned_clustered" was partitio
 
 ![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/79a0f9ba-480f-4ed0-897f-17fb47e11517)
 
-[link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
+[link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
+
 
 # Instructions
 
@@ -120,4 +121,4 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 
 Instead of creating your own dashboard, I have created a link to view my dashboard, however, my GCP service will expire before the end of April 2024 and therefore no connection to BigQuery will be available.
 
-[link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
+[link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
