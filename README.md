@@ -52,9 +52,6 @@ Prerequisites
 - GCP credentials file capable of modifyng GCS buckets
 - GCP credentials file capable of modyfing BigQuery datasets
 
-1. Install Terraform _https://developer.hashicorp.com/terraform/install_
-2. Install Jupyter  (optional - not required to run the project)
-   '''
-   pip install jupyter
-   '''
+1. Install Terraform `https://developer.hashicorp.com/terraform/install`
+2. Install Jupyter `pip install jupyter` (optional - not required to run the project)
 3. 
