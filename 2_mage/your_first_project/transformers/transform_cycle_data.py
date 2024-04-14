@@ -9,6 +9,7 @@ def transform(data, *args, **kwargs):
     print("Trips with 0 count:", data['Count'].isin([0]).sum())
     # Specify your transformation logic here
 
+    # remove data where there was no trips
     return data[data['Count'] > 0]
 
 

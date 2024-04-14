@@ -11,9 +11,9 @@ if 'test' not in globals():
 @data_loader
 def load_data_from_api(*args, **kwargs):
     
-    # change the date to a keyword argument then have triggers for 2018, 2019, Central, Inner
-    year = kwargs['year']
-    programme = kwargs['programme']
+    # pipeline variables
+    year = kwargs['year']   # cycle data year
+    programme = kwargs['programme'] # cycle data pogramme (Central, Inner, Outer)
     #year = "2019"
     #programme = 'Outer'
 
@@ -23,9 +23,8 @@ def load_data_from_api(*args, **kwargs):
     f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20Q4%20autumn%20(Oct-Dec)-{programme}.csv'
     ]
 
+    # we need to trick the website into thinking that we are coming from a browser
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
-    #url = 'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/2019%20Q1%20(Jan-Mar)-Central.csv'
-    #url = f'https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/{year}%20{quarter}%20(Jan-Mar)-Central.csv'
 
     dfs = []
 

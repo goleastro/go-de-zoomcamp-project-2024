@@ -5,18 +5,26 @@ import os
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/keys/go-de-zoomcamp-project-2024.json"
+#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/keys/go-de-zoomcamp-project-2024.json"
 
-bucket_name = 'go-de-zoomcamp-project-2024-bucket'
-project_id = 'go-de-zoomcamp-project-2024'
+#bucket_name = 'go-de-zoomcamp-project-2024-bucket'
+#project_id = 'go-de-zoomcamp-project-2024'
 
 @data_exporter
 def export_data(data, *args, **kwargs):
 
-    year = kwargs['year']
-    programme = kwargs['programme']
+    #google credential key location
+    google_app_cred_location = kwargs['google_app_cred_location']
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = google_app_cred_location
+
+    #pipeline variables
+    project_id = kwargs['project_id'] # GCP project ID
+    bucket_name = kwargs['bucket_name'] # GCP bucket
+    year = kwargs['year'] # cycle data year
+    programme = kwargs['programme'] # cycle data pogramme (Central, Inner, Outer)
     #year = "2019"
     #programme = 'Outer'
+
     table_name=f'{programme}_cycle_data'
     root_path= f'{bucket_name}/{table_name}/{year}'
 
