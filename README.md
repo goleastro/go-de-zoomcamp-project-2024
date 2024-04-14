@@ -56,10 +56,10 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 2. Install Jupyter `pip install jupyter` (optional - not required to run the project)
 3. Place your GCP credentials file within a directory of the project, example `1_terraform/keys/go-de-zoomcamp-project-2024.json`
 4. Modify the **variables.tf** file found here `1_terraform/variables.tf`
-     - **credentials:** this should be the path to your GCP credentials file. i.e. "./keys/go-de-zoomcamp-project-2024.json""
-     - **project:** this should be the name of your GCP project
-     - **bq_dataset_name:** you can leave this as "london_cycles"
-     - **gcs_bucket_name:** this should be the name of your GCS bucket
+     - **credentials:**      this should be the path to your GCP credentials file. i.e. "./keys/go-de-zoomcamp-project-2024.json""
+     - **project:**      this should be the name of your GCP project
+     - **bq_dataset_name:**      you can leave this as "london_cycles"
+     - **gcs_bucket_name:**      this should be the name of your GCS bucket
 5. Run `Terraform init`
 6. Run `Terraform apply` and hit "y" if you are happy with the plan
 7. Update **io_config.yaml** file found here `2_mage/io_config.yaml`
