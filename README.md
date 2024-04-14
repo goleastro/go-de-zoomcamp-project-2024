@@ -26,11 +26,6 @@ We have developed a dashboard with a few tiles by:
 # Data Pipeline
 The cycle data is made available periodically, and therefore we have created a batch processing pipeline.
 
-## Note: 
-`- When the pipeline creates the BigQuery cycle_data tables, it creates the tables with a partition on the "Date_Time" field per day and clusters the tables pm the "Mode" field.
-- Partitioning was done to reduce the read size by upstream DBT processes.
-- Clustering was done to improve performance when filtering on the "Mode" field. `
-
 
 # Technologies
 The technologies that were used are:
