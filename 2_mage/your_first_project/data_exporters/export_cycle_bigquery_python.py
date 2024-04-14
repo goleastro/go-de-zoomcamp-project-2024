@@ -18,10 +18,10 @@ def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
 
     Docs: https://docs.mage.ai/design/data-loading#bigquery
     """
-    database='go-de-zoomcamp-project-2024'
-    dataset='london_cycles'
+    project_id = kwargs['project_id']
+    dataset = kwargs['dataset']
     
-    table_id = f'{database}.{dataset}.{programme}_cycle_data'
+    table_id = f'{project_id}.{dataset}.{programme}_cycle_data'
     config_path = path.join(get_repo_path(), 'io_config.yaml')
     config_profile = 'default'
 

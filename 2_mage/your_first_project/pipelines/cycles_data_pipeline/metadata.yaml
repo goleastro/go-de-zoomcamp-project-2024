@@ -10,12 +10,12 @@ blocks:
   language: python
   name: load_api_data
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
   uuid: load_api_data
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks:
@@ -32,7 +32,7 @@ blocks:
   upstream_blocks:
   - load_api_data
   uuid: transform_cycle_data
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks:
@@ -43,13 +43,13 @@ blocks:
   language: python
   name: export_cycles_data_to_gcs
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:
   - transform_cycle_data
   uuid: export_cycles_data_to_gcs
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks:
@@ -60,13 +60,13 @@ blocks:
   language: python
   name: load_cycle_gcs
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_loader
   upstream_blocks:
   - export_cycles_data_to_gcs
   uuid: load_cycle_gcs
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration:
     data_provider: bigquery
@@ -81,7 +81,7 @@ blocks:
   language: python
   name: export_cycle_bigquery_python
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:
@@ -109,5 +109,12 @@ spark_config: {}
 tags: []
 type: python
 uuid: cycles_data_pipeline
+variables:
+  bucket_name: go-de-zoomcamp-project-2024-bucket
+  dataset: london_cycles
+  google_app_cred_location: /home/src/keys/go-de-zoomcamp-project-2024.json
+  programme: Central
+  project_id: go-de-zoomcamp-project-2024
+  year: 2019
 variables_dir: /home/src/mage_data/your_first_project
 widgets: []
