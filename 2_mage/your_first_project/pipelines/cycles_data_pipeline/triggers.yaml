@@ -117,7 +117,7 @@ triggers:
     programme: Inner
     year: 2017
 - envs: []
-  last_enabled_at: 2024-04-13 17:33:23.851528+00:00
+  last_enabled_at: 2024-04-13 17:33:23.851528
   name: cycle data outer 2017
   pipeline_uuid: cycles_data_pipeline
   schedule_interval: '@once'
@@ -125,7 +125,7 @@ triggers:
   settings: null
   sla: null
   start_time: 2024-04-13 17:32:00
-  status: active
+  status: inactive
   variables:
     programme: Outer
     year: 2017
