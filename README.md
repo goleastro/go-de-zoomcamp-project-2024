@@ -45,6 +45,8 @@ The data in the fact table "fact_cycle_trips_partitioned_clustered" was partitio
 
 ![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/79a0f9ba-480f-4ed0-897f-17fb47e11517)
 
+[link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
+
 # Instructions
 
 ## Prerequisites
@@ -103,4 +105,11 @@ Assuming that a GitHub CodeSpace will be used to run this project.
      - Point to the production environment
      - Run the job
      - Check your dataset and confirm that the deployment to 'production' was successful. All models from point 15 above should be present in the production.
-17. 
+17. In Google's Looker Studio
+     - Create a new Big Query data source
+     - Point to the fact_cycle_trips table in your production (or dev) dataset
+     - Add a control `date filter`, set Date_Time as the dimension
+     - Add a control `drop down`, set Year as the dimension
+     - Bicycle type distribution: Add a pie chart, dimension = "mode"; metric = sum(count)
+     - Bicycle type per borough: Add stacked bar chart, dimension = dimension = "mode"; metric = sum(count)
+     - Bicycle type per quarter: Add stacked bar chart, dimension = "year"; break down dimension = "mode"; metric = sum(count)
