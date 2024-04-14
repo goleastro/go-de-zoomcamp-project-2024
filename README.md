@@ -18,24 +18,22 @@ Inner and Outer data from 2017 to 2019 only includes quarter 2 of the year (Q2 o
 We have developed a dashboard with a few tiles by:
 
 - Using cycle data provided by TfL here cycling.data.tfl.gov.uk.
-- Creating a pipeline that processes the dataset and loads it GCS in Parquet format.
+- Creating a pipeline in Mage that processes the dataset and loads it GCS in Parquet format.
 - The pipeline also move the data from the data lake to BigQuery.
-- Transforming the data in the data warehouse: prepare it for the dashboard
-- Building a dashboard to visualize the data
+- We then used DBT to transform the data in the data warehouse into a production environment where it is now prepared for the dashboard.
+- Looker Studio was then used to present the cycle data information in a dashboard.
 
 # Data Pipeline
-The pipeline could be stream or batch: this is the first thing you'll need to decide
+The cycle data is made available periodically, and therefore we have created a batch processing pipeline.
 
-Stream: If you want to consume data in real-time and put them to data lake
-Batch: If you want to run things periodically (e.g. hourly/daily)
 # Technologies
-You don't have to limit yourself to technologies covered in the course. You can use alternatives as well:
+The technologies that were used are
 
 - Cloud: GCP
 - Infrastructure as code (IaC): Terraform
 - Workflow orchestration: Mage
 - Data Warehouse: BigQuery
-- Batch processing: Spark
+- Batch processing: Pandas, DBT cloud
 - Stream processing: None
 
 
