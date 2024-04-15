@@ -48,7 +48,6 @@ The data in the fact table "fact_cycle_trips_partitioned_clustered" was partitio
 ![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/f89fd1b9-33d0-4aa9-8bd6-567cc5e97cbd)
 
 
-
 [Link to report in Looker Studio: Bicycle Type](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
 
 [Link to report in Looker Studio: Programme Distribution](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
@@ -130,8 +129,3 @@ Instead of creating your own dashboard, I have created a link to view my dashboa
 [Link to report in Looker Studio: Bicycle Type](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
 
 [Link to report in Looker Studio: Programme Distribution](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
-
-
-![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/2d6f2c47-b68d-4b9e-aaa5-99ffc5e42f45)
-
-![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/f89fd1b9-33d0-4aa9-8bd6-567cc5e97cbd)
