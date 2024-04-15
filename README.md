@@ -78,7 +78,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 12. Update **metada.yaml** file found here `2_mage/your_first_project/pipelines/cycles_data_pipeline/metadata.yaml`
      - Update the following variables
           - **bucket_name:** this should be your GCS bucket name
-          - **dataset:** you can leave this name as is
+          - **dataset:** you can leave this name as is (must be the same as your dataset name that you created in above with Terraform)
           - **google_app_cred_location:** point this to the location of your GCP credential file (similar to step 7 above)
           - **project_id:** this should your GCP projectID
           - **year:** this variable is used to pick which year we download data for _(this value can be between 2014 and 2019)_
