@@ -43,9 +43,15 @@ The technologies that were used are:
 The data in the fact table "fact_cycle_trips_partitioned_clustered" was partitioned by "Date_Time" and clustered by "Mode" to improve the dashboard read size and performance respectively. 
 - Dashboard: Looker Studio
 
-![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/79a0f9ba-480f-4ed0-897f-17fb47e11517)
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/2d6f2c47-b68d-4b9e-aaa5-99ffc5e42f45)
 
-[link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/f89fd1b9-33d0-4aa9-8bd6-567cc5e97cbd)
+
+
+
+[Link to report in Looker Studio: Bicycle Type](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
+
+[Link to report in Looker Studio: Programme Distribution](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
 
 
 # Instructions
@@ -121,4 +127,11 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 
 Instead of creating your own dashboard, I have created a link to view my dashboard, however, my GCP service will expire before the end of April 2024 and therefore no connection to BigQuery will be available.
 
-[link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
+[Link to report in Looker Studio: Bicycle Type](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
+
+[Link to report in Looker Studio: Programme Distribution](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
+
+
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/2d6f2c47-b68d-4b9e-aaa5-99ffc5e42f45)
+
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/f89fd1b9-33d0-4aa9-8bd6-567cc5e97cbd)
