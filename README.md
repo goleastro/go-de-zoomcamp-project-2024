@@ -114,6 +114,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
           - stg_Inner_cycle_data
           - stg_Outer_cycle_data
           - stg_central_cycle_data
+
 ![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/386f00c8-3505-40eb-a9dc-9669f7ab7c96)
 
 16. (Optional) Next we want to deploy the models to a 'production' environment.
@@ -121,6 +122,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
      - Point to the production environment
      - Run the job
      - Check your dataset and confirm that the deployment to 'production' was successful. All models from point 15 above should be present in the production.
+
 ![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/ba94823d-5803-4263-8195-cac4d7a56473)
 
 ### Dashboard with Looker Studio
