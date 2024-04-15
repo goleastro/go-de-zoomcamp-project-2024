@@ -18,11 +18,108 @@ models:
       - name: cycle_id
         data_type: string
         description: ""
-        #tests:
-        #    - unique:
-        #        severity: warn
-        #    - not_null:
-        #        severity: warn
+
+      - name: date_time
+        data_type: datetime
+        description: ""
+
+      - name: year
+        data_type: string
+        description: ""
+
+      - name: locationid
+        data_type: string
+        description: ""
+
+      - name: weather
+        data_type: string
+        description: ""
+
+      - name: day
+        data_type: string
+        description: ""
+
+      - name: round
+        data_type: string
+        description: ""
+
+      - name: dir
+        data_type: string
+        description: ""
+
+      - name: path
+        data_type: string
+        description: ""
+
+      - name: mode
+        data_type: string
+        description: ""
+
+      - name: count
+        data_type: int64
+        description: ""
+
+      - name: programme
+        data_type: string
+        description: ""
+
+  - name: stg_outer_cycle_data
+    description: ""
+    columns:
+      - name: cycle_id
+        data_type: string
+        description: ""
+
+      - name: date_time
+        data_type: datetime
+        description: ""
+
+      - name: year
+        data_type: string
+        description: ""
+
+      - name: locationid
+        data_type: string
+        description: ""
+
+      - name: weather
+        data_type: string
+        description: ""
+
+      - name: day
+        data_type: string
+        description: ""
+
+      - name: round
+        data_type: string
+        description: ""
+
+      - name: dir
+        data_type: string
+        description: ""
+
+      - name: path
+        data_type: string
+        description: ""
+
+      - name: mode
+        data_type: string
+        description: ""
+
+      - name: count
+        data_type: int64
+        description: ""
+
+      - name: programme
+        data_type: string
+        description: ""
+
+  - name: stg_inner_cycle_data
+    description: ""
+    columns:
+      - name: cycle_id
+        data_type: string
+        description: ""
 
       - name: date_time
         data_type: datetime

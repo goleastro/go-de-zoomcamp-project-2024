@@ -43,9 +43,15 @@ The technologies that were used are:
 The data in the fact table "fact_cycle_trips_partitioned_clustered" was partitioned by "Date_Time" and clustered by "Mode" to improve the dashboard read size and performance respectively. 
 - Dashboard: Looker Studio
 
-![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/79a0f9ba-480f-4ed0-897f-17fb47e11517)
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/2d6f2c47-b68d-4b9e-aaa5-99ffc5e42f45)
 
-[link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/f89fd1b9-33d0-4aa9-8bd6-567cc5e97cbd)
+
+
+[Link to report in Looker Studio: Bicycle Type](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
+
+[Link to report in Looker Studio: Programme Distribution](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
+
 
 # Instructions
 
@@ -77,7 +83,7 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 12. Update **metada.yaml** file found here `2_mage/your_first_project/pipelines/cycles_data_pipeline/metadata.yaml`
      - Update the following variables
           - **bucket_name:** this should be your GCS bucket name
-          - **dataset:** you can leave this name as is
+          - **dataset:** you can leave this name as is (must be the same as your dataset name that you created in above with Terraform)
           - **google_app_cred_location:** point this to the location of your GCP credential file (similar to step 7 above)
           - **project_id:** this should your GCP projectID
           - **year:** this variable is used to pick which year we download data for _(this value can be between 2014 and 2019)_
@@ -86,10 +92,15 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 13. Mage should have a few Triggers already setup. Manually execute all the triggers. The triggers run the pipe line for each programme `(Outer, Central, Inner)` once for each of the years `2017, 2018, 2019`
      - if there are no triggers setup for some reason, then setup and execute the triggers
      - The cycle data will have loaded to the GCS bucket, partitioned by year
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/84ff3ad9-1ac0-4724-bc6b-caa3afe65f18)
      - The cycle data will have been read from the GCS bucket to BigQuery, to a dataset for each programme, `(Outer, Central, Inner)`.
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/784152de-52b8-40be-883a-2b2f39df0dba)
           - The datasets are created with a partition on the "Date_Time" field per day and clusters the tables pm the "Mode" field.
                - Partitioning was done to reduce the read size by upstream DBT processes.
                - Clustering was done to improve performance when filtering on the "Mode" field.
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/5bdce731-9442-49ec-abc0-58af0e5995dd)
+
+
 ### Transformation with DBT
 14. Create a new or use an existing DBT cloud account - [dbt cloud](https://www.getdbt.com/)
      - Create a connection to BigQuery and upload your GCP key file to create the connection between DBT cloud and BigQuery.
@@ -102,12 +113,18 @@ Assuming that a GitHub CodeSpace will be used to run this project.
           - monitoring_locations_lookup
           - stg_Inner_cycle_data
           - stg_Outer_cycle_data
-          - stg_central_cycle_data  
+          - stg_central_cycle_data
+
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/386f00c8-3505-40eb-a9dc-9669f7ab7c96)
+
 16. (Optional) Next we want to deploy the models to a 'production' environment.
      - To do this, setup a 'Deploy Job' in DBT
      - Point to the production environment
      - Run the job
      - Check your dataset and confirm that the deployment to 'production' was successful. All models from point 15 above should be present in the production.
+
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/ba94823d-5803-4263-8195-cac4d7a56473)
+
 ### Dashboard with Looker Studio
 17. In Google's Looker Studio
      - Create a new Big Query data source
@@ -118,6 +135,8 @@ Assuming that a GitHub CodeSpace will be used to run this project.
      - Bicycle type per borough: Add stacked bar chart, dimension = dimension = "mode"; metric = sum(count)
      - Bicycle type per quarter: Add stacked bar chart, dimension = "year"; break down dimension = "mode"; metric = sum(count)
 
-Instead of creating your own dashboard, I have created a link to view my dashboard, however, my GCP service will expire before the end of April 2024 and therefore no connection to BigQuery will be available.
+Instead of creating your own dashboard, I have created a link to view my dashboard, however, my GCP service will expire before the end of April 2024 and therefore no connection to BigQuery will be available and so I have included screenshots of the dashboard near the top of this page.
 
-[link to report in Looker Studio](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
+[Link to report in Looker Studio: Bicycle Type](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/p_dugtlfrdgd)
+
+[Link to report in Looker Studio: Programme Distribution](https://lookerstudio.google.com/embed/reporting/ceeb797d-56f9-4f4f-8444-01dcef35ab73/page/zylwD)
