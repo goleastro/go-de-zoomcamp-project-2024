@@ -92,10 +92,15 @@ Assuming that a GitHub CodeSpace will be used to run this project.
 13. Mage should have a few Triggers already setup. Manually execute all the triggers. The triggers run the pipe line for each programme `(Outer, Central, Inner)` once for each of the years `2017, 2018, 2019`
      - if there are no triggers setup for some reason, then setup and execute the triggers
      - The cycle data will have loaded to the GCS bucket, partitioned by year
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/84ff3ad9-1ac0-4724-bc6b-caa3afe65f18)
      - The cycle data will have been read from the GCS bucket to BigQuery, to a dataset for each programme, `(Outer, Central, Inner)`.
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/784152de-52b8-40be-883a-2b2f39df0dba)
           - The datasets are created with a partition on the "Date_Time" field per day and clusters the tables pm the "Mode" field.
                - Partitioning was done to reduce the read size by upstream DBT processes.
                - Clustering was done to improve performance when filtering on the "Mode" field.
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/5bdce731-9442-49ec-abc0-58af0e5995dd)
+
+
 ### Transformation with DBT
 14. Create a new or use an existing DBT cloud account - [dbt cloud](https://www.getdbt.com/)
      - Create a connection to BigQuery and upload your GCP key file to create the connection between DBT cloud and BigQuery.
@@ -108,12 +113,16 @@ Assuming that a GitHub CodeSpace will be used to run this project.
           - monitoring_locations_lookup
           - stg_Inner_cycle_data
           - stg_Outer_cycle_data
-          - stg_central_cycle_data  
+          - stg_central_cycle_data
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/386f00c8-3505-40eb-a9dc-9669f7ab7c96)
+
 16. (Optional) Next we want to deploy the models to a 'production' environment.
      - To do this, setup a 'Deploy Job' in DBT
      - Point to the production environment
      - Run the job
      - Check your dataset and confirm that the deployment to 'production' was successful. All models from point 15 above should be present in the production.
+![image](https://github.com/goleastro/go-de-zoomcamp-project-2024/assets/20685550/ba94823d-5803-4263-8195-cac4d7a56473)
+
 ### Dashboard with Looker Studio
 17. In Google's Looker Studio
      - Create a new Big Query data source
